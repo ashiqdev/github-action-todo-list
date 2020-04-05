@@ -1,0 +1,5 @@
+type TodoList {
+  id: ID! @id
+  task: String!
+  isCompleted: Boolean @default(value:false)
+}

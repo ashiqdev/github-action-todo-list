@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "deploy:backend": "lerna exec --stream --scope=@todolist/backend -- yarn deploy",
+    "start:backend": "lerna exec --stream --scope=@todolist/backend -- yarn start"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

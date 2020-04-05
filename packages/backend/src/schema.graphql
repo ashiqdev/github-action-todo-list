@@ -1,0 +1,10 @@
+# import * from './generated/prisma.graphql'
+
+type Mutation {
+  createTodo(task: String!, isCompleted: Boolean): TodoList!
+}
+
+type Query {
+  todos: [TodoList!]!
+  todo(id: ID!): TodoList!
+}

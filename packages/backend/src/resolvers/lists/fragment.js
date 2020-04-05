@@ -1,4 +1,5 @@
-const gql = require("graphql-tag");
+// const gql = require("graphql-tag");
+import gql from "graphql-tag";
 
 const fragment = gql`
   fragment TodoList on TodoList {
@@ -8,4 +9,4 @@ const fragment = gql`
   }
 `;
 
-module.exports = fragment;
+export default fragment;

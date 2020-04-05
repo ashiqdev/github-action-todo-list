@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 
-const createServer = require("./loaders/server");
+import createServer from "./loaders/server";
 
 const server = createServer();
 

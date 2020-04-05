@@ -5,7 +5,8 @@
   "scripts": {
     "deploy": "prisma deploy",
     "reset": "prisma reset",
-    "start": "nodemon src/index.js"
+    "start": "nodemon -e js,graphql -x node --inspect dist/server.js --watch=dist",
+    "build": "rm -rf dist && webpack --mode development"
   },
   "license": "MIT",
   "dependencies": {
@@ -14,6 +15,18 @@
     "prisma-client-lib": "^1.34.10"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "nodemon": "^2.0.2",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-node-externals": "^1.7.2"
   }
 }

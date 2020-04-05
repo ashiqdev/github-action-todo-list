@@ -1,5 +1,8 @@
-const todoListQuery = require("./lists/query");
-const todoListMutation = require("./lists/mutation");
+// const todoListQuery = require("./lists/query");
+import todoListQuery from "./lists/query";
+
+// const todoListMutation = require("./lists/mutation");
+import todoListMutation from "./lists/mutation";
 
 const resolvers = {
   Mutation: {
@@ -11,4 +14,4 @@ const resolvers = {
   },
 };
 
-module.exports = resolvers;
+export default resolvers;

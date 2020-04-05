@@ -1,5 +1,4 @@
-const fragment = require("./fragment");
-
+import fragment from "./fragment";
 const query = {
   async todos(parent, args, ctx) {
     const todos = await ctx.prisma.todoLists().$fragment(fragment);
@@ -12,4 +11,4 @@ const query = {
   },
 };
 
-module.exports = query;
+export default query;

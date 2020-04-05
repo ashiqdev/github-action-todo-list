@@ -1,4 +1,5 @@
-const fragment = require("./fragment");
+// const fragment = require("./fragment");
+import fragment from "./fragment";
 
 const mutations = {
   async createTodo(parent, args, ctx) {
@@ -13,4 +14,4 @@ const mutations = {
   },
 };
 
-module.exports = mutations;
+export default mutations;

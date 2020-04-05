@@ -1,0 +1,32 @@
+name: "Github Actions Test"
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
+      PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: "Install Node"
+        uses: actions/setup-node@v1
+      - name: "Install global packages"
+        run: npm install -g yarn prisma-cli
+      - name: "Run docker Container"
+        run: docker-compose -f docker-compose.yml up --build -d
+      - name: "Install deps"
+        run: yarn install
+      - name: "prisma deploy"
+        run: yarn deploy:backend
+      - name: "Build app"
+        run: yarn build:backend
+      - name: "Seed Backend"
+        run: yarn seed:backend
+      - name: "Start backend"
+        run: yarn start:backend

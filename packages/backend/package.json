@@ -5,6 +5,7 @@
   "scripts": {
     "deploy": "prisma deploy",
     "reset": "prisma reset",
+    "seed": "node prisma/seed/index.js",
     "start": "nodemon -e js,graphql -x node --inspect dist/server.js --watch=dist",
     "build": "rm -rf dist && webpack --mode development"
   },

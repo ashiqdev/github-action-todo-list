@@ -7,6 +7,7 @@
   "scripts": {
     "deploy:backend": "lerna exec --stream --scope=@todolist/backend -- yarn deploy",
     "build:backend": "lerna run build --stream --ignore @todolist/dashboard*",
+    "seed:backend": "lerna exec --stream --scope=@todolist/backend -- yarn seed",
     "start:backend": "lerna exec --stream --scope=@todolist/backend -- yarn start"
   },
   "devDependencies": {

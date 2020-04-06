@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v1
       - name: "Install Node"
         uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - name: "Install global packages"
         run: npm install -g yarn prisma-cli
       - name: "Run docker Container"

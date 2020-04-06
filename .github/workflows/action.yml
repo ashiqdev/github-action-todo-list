@@ -2,7 +2,7 @@ name: "Github Actions Test"
 on:
   push:
     branches:
-      - master
+      - actions/node
 
 jobs:
   test:
@@ -14,8 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: "Install Node"
-        uses: actions/setup-node@v1
+      - name: NodeJS Action Template
+        uses: bitoiu/node-js-action-template@v1.0
       - name: "Install global packages"
         run: npm install -g yarn prisma-cli
       - name: "Run docker Container"

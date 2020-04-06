@@ -8,20 +8,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     env:
       PRISMA_ENDPOINT: ${{secrets.PRISMA_ENDPOINT}}
       PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
 
     steps:
-      - uses: actions/checkout@v1
-      - name: "Install Node"
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
       - name: "Install global packages"
         run: npm install -g yarn prisma-cli
       - name: "Run docker Container"

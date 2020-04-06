@@ -13,10 +13,9 @@ jobs:
       PRISMA_SECRET: ${{secrets.PRISMA_SECRET}}
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
+      - uses: actions/checkout@v1
+      - name: NodeJS Action Template
+        uses: bitoiu/node-js-action-template@v1.0
       - name: "Install global packages"
         run: npm install -g yarn prisma-cli
       - name: "Run docker Container"

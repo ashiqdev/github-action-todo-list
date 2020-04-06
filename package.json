@@ -6,9 +6,13 @@
   ],
   "scripts": {
     "deploy:backend": "lerna exec --stream --scope=@todolist/backend -- yarn deploy",
-    "build:backend": "lerna run build --stream --ignore @todolist/dashboard*",
+    "build:backend": "lerna run build --stream --ignore @todolist/frontend*",
+    "build:frontend": "lerna exec --stream --scope=@todolist/frontend -- yarn build",
+    "build": "lerna run build --stream --ignore @todolist/frontend*",
     "seed:backend": "lerna exec --stream --scope=@todolist/backend -- yarn seed",
-    "start:backend": "lerna exec --stream --scope=@todolist/backend -- yarn start"
+    "start:backend": "lerna exec --stream --scope=@todolist/backend -- yarn start",
+    "start:frontend": "lerna exec --stream --scope=@todolist/frontend -- yarn start",
+    "start": "DEBUG=todolist:* concurrently \"yarn start:frontend\" \"yarn start:backend\""
   },
   "devDependencies": {
     "lerna": "^3.20.2"

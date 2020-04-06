@@ -9,7 +9,7 @@ server.start(
     port: 4001,
     cors: {
       credentials: true,
-      origin: "http://localhost:3001",
+      origin: "http://localhost:8080",
     },
     debug: true,
   },

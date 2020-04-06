@@ -24,9 +24,9 @@ jobs:
         run: yarn install
       - name: "prisma deploy"
         run: yarn deploy:backend
-      - name: "Build app"
-        run: yarn build:backend
       - name: "Seed Backend"
         run: yarn seed:backend
-      - name: "Start backend"
-        run: yarn start:backend
+      - name: "Build app"
+        run: yarn build
+      - name: "Start both frontend and backend"
+        run: yarn start
